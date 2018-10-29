@@ -43,6 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,12 +54,132 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AdventureWorksDWDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseLogConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimAccountConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimCurrencyConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimCustomerConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimDateConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimDepartmentGroupConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimEmployeeConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimGeographyConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimOrganizationConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimProductCategoryConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimProductConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimProductSubcategoryConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimPromotionConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimResellerConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimSalesReasonConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimSalesTerritoryConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DimScenarioConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactAdditionalInternationalProductDescriptionConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactCallCenterConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactCurrencyRateConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactFinanceConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactInternetSaleConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactInternetSalesReasonConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactProductInventoryConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactResellerSaleConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactSalesQuotaConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactSurveyResponseConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProspectiveBuyerConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VAssocSeqLineItemConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VAssocSeqOrderConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDmPrepConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VTargetMailConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VTimeSeryConfiguration.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="EF.Reverse.POCO.Core.ttinclude" />
+    <None Include="EF.Reverse.POCO.ttinclude" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureWorksDWDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksDWDatabase.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{81feda50-fc4e-4fdc-bb80-663fd98c6940}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

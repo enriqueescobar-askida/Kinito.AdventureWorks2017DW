@@ -43,6 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,12 +54,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AdventureWorksDWDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IAdventureWorksDWDbContext.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="EF.Reverse.POCO.Core.ttinclude" />
+    <None Include="EF.Reverse.POCO.ttinclude" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{81feda50-fc4e-4fdc-bb80-663fd98c6940}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureWorksDWDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksDWDatabase.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

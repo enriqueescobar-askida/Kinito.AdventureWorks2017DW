@@ -43,6 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,12 +54,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AdventureWorksDWDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksDWDbContext.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksDWDbContextFactory.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FakeAdventureWorksDWDbContext.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FakeDbSet.cs">
+      <DependentUpon>AdventureWorksDWDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="EF.Reverse.POCO.Core.ttinclude" />
+    <None Include="EF.Reverse.POCO.ttinclude" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureWorksDWDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksDWDatabase.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Configurations\Configurations.csproj">
+      <Project>{ed10dfde-06c3-4918-a8c8-cc474b74f7dd}</Project>
+      <Name>Configurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{81feda50-fc4e-4fdc-bb80-663fd98c6940}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{29e6d9f4-5552-41ce-9816-c6dd6d7fb130}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
